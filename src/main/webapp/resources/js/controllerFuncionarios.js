@@ -1,13 +1,13 @@
-angular.module('appCliente', [])
-        .controller('controllerClientes', function ($scope, $http) {
-            $scope.cliente = {};
-            $scope.salvarCliente = function () {
-                $http.post('https://servicocontroleusuarios.herokuapp.com/cliente', $scope.cliente).
+angular.module('appFuncionario', [])
+        .controller('controllerFuncionarios', function ($scope, $http) {
+            $scope.funcionario = {};
+            $scope.salvarFuncionario = function () {
+                $http.post('https://servicogerentefornecedor.herokuapp.com/funcionario', $scope.funcionario).
                         then(function (response) {
                             if (response.data) {
-                                $scope.mensagemCliente = "Cliente cadastrado com sucesso!!!";
+                                $scope.mensagemFuncionario = "Funcionário cadastrado com sucesso!!!";
                             } else {
-                                $scope.mensagemCliente = "Cliente não foi cadastrado!!!";
+                                $scope.mensagemFuncionario = "Funcionário não foi cadastrado!!!";
                             }
 
                         });

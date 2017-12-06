@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html> 
-<html lang="en" ng-app="appCliente" ng-controller="controllerClientes">
+<html lang="en" ng-app="appProdutos" ng-controller="controllerProdutos">
     <head>
         <title>Restaurante Das Cidas</title>
 
@@ -32,7 +32,7 @@
         <script type="text/javascript" src="resources/js/wow.min.js"></script>
         <script type="text/javascript" src="resources/js/init.js"></script>
         <script type="text/javascript" src="resources/js/manipulaTela1.js"></script>
-        <script src="resources/js/controllerClientes.js" type="text/javascript"></script> 
+        <script src="resources/js/controllerProdutos.js" type="text/javascript"></script> 
     </head>
     <body  >
 
@@ -89,7 +89,7 @@
                         <li class="slide">
                             <div ng-repeat="p in produtos">
                                 <div class="item">
-                                    <img src="{{p.imageStr}}" width="100" height="100" alt="sliderimg" class="wow flipInX"
+                                    <img src="resources/{{p.imageStr}}" width="100" height="100" alt="sliderimg" class="wow flipInX"
                                          data-wow-delay=".8s"> 
 
                                     <h3>{{p.nome}}</h3>
