@@ -101,49 +101,6 @@
             </div> <!-- end of besth dishes-->
         </div> <!-- end of bestdishes wrapper-->
 
-        <!--============ BOOK ONLINE ============-->
-<!--
-        <div class="bookonlinewrapper">
-            <div class="container" id="bookonline">
-                <h3 class="wow fadeInUp" data-wow-delay="0.3s">QUER SER NOSSO CLIENTE, CADASTRA-SE AGORA</h3>
-                <form ng-click="salvarCliente()">
-                    <div class="form-group">
-                        <input type="text" class="form-control name" placeholder="Seu Nome" ng-model="cliente.nome" required/>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control name" placeholder="Seu Email" ng-model="cliente.email" required/>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control name" placeholder="Seu Telefone" ng-model="cliente.telefone" required/>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control name" placeholder="Seu Endereço" ng-model="cliente.endereco" required/>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control name" placeholder="Seu CPF" ng-model="cliente.cpf" required/>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control name" placeholder="Sua Data de Nascimento" ng-model="cliente.datanascimento" required/>
-                    </div>
-                    <button class="booknow wow fadeInUp alinha"> Cadastrar </button>
-                    <br>
-                    <h2> {{mensagemCliente}} </h2>
-                    <br>
-                    <br>
-                    <br>
-                </form>
-
-
-
-            </div>
-        </div>  end of book online wrapper
--->
-
         <!--============ FOOTER ============-->
 
 

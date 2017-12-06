@@ -34,7 +34,7 @@
                 <div class="logo"> <a href="#"><img src="resources/images/LOGO.png" alt="logo" width="165" height="74"></a> </div> <!--end of Logo-->
                  <nav>
                     <ul id="navigations">
-                        li><a href="index">PRINCIPAL</a></li>
+                        <li><a href="index">PRINCIPAL</a></li>
                         <li> <a href="login">ACESSO</a></li>
                         <li><a href="produtos">PRODUTOS</a></li>
                         <li><a href="https://interfacegerentefornecedor.herokuapp.com">FUNCIONÁRIO</a></li>
