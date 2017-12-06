@@ -46,7 +46,7 @@
 
         <div class="bookonlinewrapper container">
             <div class="container" id="bookonline">
-                <h3 class="wow fadeInUp" data-wow-delay="0.3s">CRIE O SEU LOGIN PRIMEIRAMENTE</h3>
+                <h3 class="wow fadeInUp" data-wow-delay="0.3s">CRIE O SEU ACESSO</h3>
             </div>
 
             <form:form method="POST" modelAttribute="userForm" class="form-signin">
