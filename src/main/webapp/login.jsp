@@ -48,7 +48,7 @@
         <div class="bookonlinewrapper">
             <div class="container" id="bookonline">
                 <form method="POST" action="${contextPath}/login" class="container" id="bookonline">
-                    <h3 class="wow fadeInUp" data-wow-delay="0.3s"> ACESSE SUA CONTA AGORA</h3>
+                    <h3 class="wow fadeInUp" data-wow-delay="0.3s">FUNCIONÁRIOS</h3>
 
                     <div class="form-group ${error != null ? 'has-error' : ''}">
                         <br>
