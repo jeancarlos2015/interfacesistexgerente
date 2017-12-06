@@ -61,7 +61,7 @@
             <li class="slide">
                 <div ng-repeat="p in produtos1">
                     <div class="item">
-                        <img src="{{p.imageStr}}" width="150" height="150" alt="sliderimg" class="wow flipInX"
+                        <img src="resources/{{p.imageStr}}" width="150" height="150" alt="sliderimg" class="wow flipInX"
                              data-wow-delay=".8s"> 
 
                         <h4>{{p.nome}}</h4>

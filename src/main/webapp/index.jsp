@@ -45,7 +45,7 @@
                     <ul id="navigations">
                         <li><a href="index">PRINCIPAL</a></li>
                         <li> <a href="login">ACESSO</a></li>
-                        <li><a href="produtos">PRODUTOS</a></li>]
+                        <li><a href="produtos">PRODUTOS</a></li>
                         <li><a href="http://interfaceusuariospedidos.herokuapp.com">CLIENTE</a></li>
                     </ul>
                 </nav>
@@ -66,7 +66,7 @@
                         <li class="slide">
                             <h5 class="wow fadeInDown" data-wow-delay="0.8s">{{p.nome}}</h5>
                             <p class="wow fadeInUp" data-wow-delay="0.8s">{{p.descricao}}</p>
-                            <img src="{{p.imageStr}}" width="150" height="150" alt="sliderimg" class="wow flipInX"
+                            <img src="resources/{{p.imageStr}}" width="150" height="150" alt="sliderimg" class="wow flipInX"
                                  data-wow-delay=".8s"/> 
                         </li>
                     </ul>
