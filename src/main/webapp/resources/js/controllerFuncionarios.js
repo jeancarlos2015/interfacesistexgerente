@@ -6,8 +6,6 @@ angular.module('appFuncionario', [])
                         then(function (response) {
                             if (response.data) {
                                 $scope.mensagemFuncionario = "Funcionário cadastrado com sucesso!!!";
-                            } else {
-                                $scope.mensagemFuncionario = "Funcionário não foi cadastrado!!!";
                             }
 
                         });

@@ -67,4 +67,9 @@ public class UserController {
     public String produtos(Model model) {
         return "produtos";
     }
+    
+    @RequestMapping(value = {"/cadastro"}, method = RequestMethod.GET)
+    public String cadastro(Model model) {
+        return "cadastro";
+    }
 }

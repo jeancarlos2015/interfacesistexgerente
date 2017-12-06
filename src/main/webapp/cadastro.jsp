@@ -31,35 +31,38 @@
 
     <body>
 
-        
+
         <div class="bookonlinewrapper container">
             <div class="container" id="bookonline">
                 <h3 class="wow fadeInUp" data-wow-delay="0.3s">CADASTRO DE FUNCIONÁRIOS</h3>
             </div>
-            <div class="form-group">
-                <input type="text" class="form-control name" placeholder="Seu Nome" ng-model="funcionario.nome" required/>
-            </div>
+            <form ng-click="salvarFuncionario()">
+                <div class="form-group">
+                    <input type="text" class="form-control name" placeholder="Seu Nome" ng-model="funcionario.nome" required/>
+                </div>
 
-            <div class="form-group">
-                <input type="text" class="form-control name" placeholder="Seu Email" ng-model="funcionario.email" required/>
-            </div>
+                <div class="form-group">
+                    <input type="text" class="form-control name" placeholder="Seu Email" ng-model="funcionario.email" required/>
+                </div>
 
-            <div class="form-group">
-                <input type="text" class="form-control name" placeholder="Seu Telefone" ng-model="funcionario.telefone" required/>
-            </div>
+                <div class="form-group">
+                    <input type="text" class="form-control name" placeholder="Seu Telefone" ng-model="funcionario.telefone" required/>
+                </div>
 
-            <div class="form-group">
-                <input type="text" class="form-control name" placeholder="Seu Endereço" ng-model="funcionario.endereco" required/>
-            </div>
+                <div class="form-group">
+                    <input type="text" class="form-control name" placeholder="Seu Endereço" ng-model="funcionario.endereco" required/>
+                </div>
 
-            <div class="form-group">
-                <input type="text" class="form-control name" placeholder="Seu RG" ng-model="funcionario.rg" required/>
-            </div>
+                <div class="form-group">
+                    <input type="text" class="form-control name" placeholder="Seu RG" ng-model="funcionario.rg" required/>
+                </div>
 
-            <div class="form-group">
-                <input type="text" class="form-control name" placeholder="Sua Data de Nascimento" ng-model="funcionario.datanascimento" required/>
-            </div>
-            <button class="booknow wow fadeInUp" type="submit" ng-click="salvarFuncionario()">Cadastrar Funcionario</button>
+                <div class="form-group">
+                    <input type="text" class="form-control name" placeholder="Sua Data de Nascimento" ng-model="funcionario.datanascimento" required/>
+                </div>
+                <button class="booknow wow fadeInUp" type="submit" >Cadastrar Funcionario</button>
+
+            </form>
 
             <br>
             <h3> {{mensagemFuncionario}} </h3>
