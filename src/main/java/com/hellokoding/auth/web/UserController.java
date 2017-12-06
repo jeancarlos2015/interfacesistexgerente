@@ -42,9 +42,7 @@ public class UserController {
 
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-        //return "redirect:/index";
-        model.addAttribute("mensagemCliente", "Cliente cadastrado com sucesso!!!");
-        return "redirect:/registration";
+        return "redirect:/cadastro";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
