@@ -121,7 +121,7 @@
 
                 </div>
 
-
+<!--
                 <div class="sendfeedback">
                     <h2>Gostou da comida?</h2>
                     <form>
@@ -138,8 +138,8 @@
 
                     </form>
 
-                </div> <!-- end of feedback-->
-
+                </div>  end of feedback
+-->
 
 
 
