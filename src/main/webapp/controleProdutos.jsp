@@ -95,53 +95,44 @@
                         </ul>
                         </div>
                         <section id="main-content" class="column column-offset-20">
-                            <h1 class="mt-2">Cadastro de produtos</h1><a class="anchor" name="widgets"></a>
+                            <h1 class="mt-2">Controle De Produtos</h1><a class="anchor" name="widgets"></a>
+                            <form action="cadastroProduto.jsp">
+                                <input type="submit" value="Novo Produto"/>    
+                            </form>
 
                             <div class="row grid-responsive mt-1">
                                 <div class="column">
                                     <div class="card">
-
+                                        <div class="card-title">
+                                            <form class="navbar-form" ng-click="listarProdutosNome()">
+                                                <div class="form-group" style="display:inline;">
+                                                    <div class="input-group" style="display:table;">
+                                                        <span class="input-group-addon" style="width:1%;"><span class="glyphicon glyphicon-search"></span></span>
+                                                        <input class="form-control" name="nome" placeholder="Coloque aqui o cpf do cliente" autocomplete="off" autofocus="autofocus" type="text" ng-model="nome">
+                                                        <input class="hidden" type="submit" />
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
 
                                         <div class="card-block">
-                                            <form >
-                                                <label class="alinha">Nome Do Produto  <input type="text" class="form-control "  placeholder="Seu Nome" ng-model="produto.nome" required/></label>
-                                                <label class="alinha">Preço  <input type="text" class="form-control "  placeholder="Preço" ng-model="produto.preco" required/></label>
-                                                <label class="alinha">Quantidade <input type="text" class="form-control "  placeholder="Quantidade" ng-model="produto.quantidade" required/></label>
-                                                <label class="alinha">Tipo de Produto
-                                                    <select class="form-control" id="singleSelect" ng-model="produto.imageStr">
-                                                        <optgroup label="Bebida">
-                                                            <option value="images/refrigerante.png">Refrigerante</option>
-                                                            <option value="images/sulco.png">Sulco</option>
-                                                            <option value="images/cerveja.png">Cerveja</option>
-                                                        </optgroup>
-                                                        <optgroup label="Prato">
-                                                            <option value="images/feijaotropeiro.png">Feijão Tropeiro</option>
-                                                            <option value="images/macarronada.png">Macarronada</option>
-                                                            <option value="images/macarronadamolho.png">Macarronada com Molho</option>
-                                                            <option value="images/macarronadaqueijo.png">Macarronada com Queijo</option>
-                                                            <option value="images/salada.png">Salada</option>
-                                                        </optgroup>
-                                                    </select>
-                                                </label>
-                                                <label class="alinha">Fornecedor da Bebida
-                                                    <select class="form-control" id="singleSelect" ng-model="produto.idfornecedor">
-                                                        <optgroup label="Bebida">
-                                                            <option value="2">Coca-Cola</option>
-                                                            <option value="3">SuFresh</option>
-                                                            <option value="4">Skoll</option>
-                                                            <option value="5">Shop</option>
-                                                        </optgroup>
-                                                    </select>
-                                                </label>
-                                                <label class="alinha">Descrição Do Produto
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-model="produto.descricao" required></textarea>
-                                                </label>
-                                                <label class="alinha"><input type="button" value="Cadastrar Produto" ng-click="salvarProduto(funcionario)"/></label>
-                                            </form>
-                                            <form action="cadastroProduto.jsp">
-                                                <labe class="alinha"><input type="submit" value="Novo Produto"/></labe>
-                                            </form>
-                                            {{mensagemProduto}}
+                                            <div class="mt-1">
+                                                <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
+                                                <div class="float-left ml-1">
+                                                    <h4>Produto ID: Joao </h4>
+                                                    <h4>Nome do produto: Feijao Tropeiro </h4>
+                                                    <h4>Data de validade: Pendente </h4>
+                                                    <h4>Preço: 30,00 </h4>
+                                                    <h4>Produto: Marmitex </h4>
+
+                                                    <input type="button" value="Excluir"/>
+                                                    <input type="button" value="Alterar"/>
+
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <hr class="m-0 mb-2" />
+                                            </div>
+
 
                                         </div>
                                     </div>

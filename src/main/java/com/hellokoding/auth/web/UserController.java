@@ -52,7 +52,7 @@ public class UserController {
 
         if (logout != null){
             model.addAttribute("message", "Usuário logado com sucesso!!!");
-            return "funcionario";   
+            return "conta";   
         }
 
         return "login";
@@ -71,5 +71,10 @@ public class UserController {
     @RequestMapping(value = {"/cadastro"}, method = RequestMethod.GET)
     public String cadastro(Model model) {
         return "cadastro";
+    }
+    
+    @RequestMapping(value = {"/conta"}, method = RequestMethod.GET)
+    public String conta(Model model) {
+        return "conta";
     }
 }

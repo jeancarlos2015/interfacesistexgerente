@@ -66,6 +66,7 @@
 
                         <h4>{{p.nome}}</h4>
                         <h4>Preço:{{p.preco}},00</h4>
+                        <p style="text-align:">Descrição:{{p.descricao}}</p>
                     </div>
                 </div>
         </ul>
