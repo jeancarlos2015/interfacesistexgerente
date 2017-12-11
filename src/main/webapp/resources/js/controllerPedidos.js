@@ -44,8 +44,9 @@ angular.module('appPedidos', [])
                         });
             };
 
-            $scope.atribuirPedido = function (pedido) {
+            $scope.atribuirPedido = function (pedido,funcionario) {
                 pedido.status = "Pendente";
+                pedido.idfuncionario = funcionario.idfuncionario;
                 $http.put('https://servicocontrolepedidos.herokuapp.com/pedido', pedido).
                         then(function (response) {
                             indice = $scope.pedidos.indexOf(pedido);
@@ -53,8 +54,9 @@ angular.module('appPedidos', [])
                         });
             };
             $scope.pedidos=[];
-            $scope.confirmarPedido = function (pedido) {
+            $scope.confirmarPedido = function (pedido,funcionario) {
                 pedido.status = "Entregue";
+                pedido.idfuncionario = funcionario.idfuncionario;
                 $http.put('https://servicocontrolepedidos.herokuapp.com/pedido', pedido).
                         then(function (response) {
                             indice = $scope.pedidos.indexOf(pedido);
@@ -62,17 +64,7 @@ angular.module('appPedidos', [])
                         });
             };
 
-            $scope.produtos = [];
-            $scope.nome = {};
-            $scope.listarProdutosNome = function (pedido, funcionario) {
-                pedido.status = "Entregue";
-                pedido.idfuncionario = funcionario.idfuncionario;
-                $http.put('https://servicocontrolepedidos.herokuapp.com/pedido', pedido).
-                        then(function (response) {
-                            $scope.mensagemPedido = "Operacao feita com sucesso!!!";
-                        });
-            };
-
+            
             $scope.produtos = [];
             $scope.nome = {};
             $scope.listarProdutosNome = function () {

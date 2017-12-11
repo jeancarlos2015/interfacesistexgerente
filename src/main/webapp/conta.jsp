@@ -185,8 +185,8 @@
                                                                 <hr class="m-0 mb-2" />
                                                                 <form>
                                                                     <input type="button" value="Cancelar" ng-click="cancelarPedido(ped)"/>
-                                                                    <input type="button" value="Atribuir" ng-click="atribuirPedido(ped)">
-                                                                    <input type="button" value="Confirmar Entrega" ng-click="confirmarEntrega(ped)">
+                                                                    <input type="button" value="Atribuir" ng-click="atribuirPedido(ped,funcionario)">
+                                                                    <input type="button" value="Confirmar Entrega" ng-click="confirmarEntrega(ped,funcionario)">
                                                                 </form>
                                                             </div>
 
