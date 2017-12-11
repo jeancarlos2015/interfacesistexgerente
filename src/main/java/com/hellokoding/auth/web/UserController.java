@@ -51,7 +51,7 @@ public class UserController {
             model.addAttribute("error", "Usuário ou senha inválidos!!!");
 
         if (logout != null){
-            model.addAttribute("message", "Usuário logado com sucesso!!!");
+            model.addAttribute("message", "");
             return "conta";   
         }
 
