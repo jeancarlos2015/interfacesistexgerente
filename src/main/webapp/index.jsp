@@ -47,6 +47,9 @@
                         <li> <a href="login">ACESSO</a></li>
                         <li><a href="produtos">PRODUTOS</a></li>
                         <li><a href="http://interfaceusuariospedidos.herokuapp.com">CLIENTE</a></li>
+                        <c:if test="${pageContext.request.userPrincipal.name != null}">
+                            <li><a href="http://interfacegerentefornecedor.herokuapp.com/conta.jsp">Conta</a></li>
+                        </c:if>
                     </ul>
                 </nav>
             </div> <!--end of header-->
@@ -121,25 +124,25 @@
 
                 </div>
 
-<!--
-                <div class="sendfeedback">
-                    <h2>Gostou da comida?</h2>
-                    <form>
-                        <h6>Seu Nome:</h6>
-                        <input type="text" class="yourname" >
-                        <h6>Telefone :</h6>
-                        <input type="text" class="mobilenumber">
-                        <h6>Sugestão :</h6>
-                        <textarea></textarea>
-
-                        <button>Enviar </button>
-
-
-
-                    </form>
-
-                </div>  end of feedback
--->
+                <!--
+                                <div class="sendfeedback">
+                                    <h2>Gostou da comida?</h2>
+                                    <form>
+                                        <h6>Seu Nome:</h6>
+                                        <input type="text" class="yourname" >
+                                        <h6>Telefone :</h6>
+                                        <input type="text" class="mobilenumber">
+                                        <h6>Sugestão :</h6>
+                                        <textarea></textarea>
+                
+                                        <button>Enviar </button>
+                
+                
+                
+                                    </form>
+                
+                                </div>  end of feedback
+                -->
 
 
 

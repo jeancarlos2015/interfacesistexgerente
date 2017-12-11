@@ -68,7 +68,7 @@
             <br>
             <h3> {{mensagemFuncionario}} </h3>
             <br>
-            <form action="login">
+            <form action="http://interfacegerentefornecedor.herokuapp.com/login">
                 <button class="booknow wow fadeInUp" type="submit">Voltar para Login</button>
             </form>
         </div>

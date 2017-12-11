@@ -93,6 +93,9 @@
                             <li><a href="controlePedidos.jsp"><em class="fa fa-forward"></em>Pedidos</a></li>
                             <li><a href="controleClientes.jsp"><em class="fa fa-forward"></em>Clientes</a></li>
                         </ul>
+                        <br>
+                        <br>
+                        <br>
                         </div>
                         <section id="main-content" class="column column-offset-20">
                             <h1 class="mt-2">Controle de Clientes   </h1><a class="anchor" name="widgets"></a>
