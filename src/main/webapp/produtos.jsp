@@ -42,9 +42,9 @@
             </div> <!--end of header-->
 
         </div> <!-- end of headerwrapper-->
-<div class="contactwrapper">
+        <div class="contactwrapper">
 
-</div>
+        </div>
 
         <form class="navbar-form" ng-click="listarProdutosNome()">
             <div class="form-group" style="display:inline;">
@@ -60,13 +60,13 @@
 
             <li class="slide">
                 <div ng-repeat="p in produtos1">
-                    <div class="item">
+                    <div class="item tamanhofixo">
                         <img src="resources/{{p.imageStr}}" width="150" height="150" alt="sliderimg" class="wow flipInX"
                              data-wow-delay=".8s"> 
-
                         <h4>{{p.nome}}</h4>
                         <h4>Preço:{{p.preco}},00</h4>
-                        <p style="text-align:">Descrição:{{p.descricao}}</p>
+                        <p>{{p.descricao}}</p>
+
                     </div>
                 </div>
         </ul>

@@ -484,6 +484,11 @@ height:29px; border:0px; border-radius:4px; margin-top:20px; cursor:pointer; }
     display: block;
     margin: 5%;
 }
+.tamanhofixo{
+    width: 20%;
+    text-align: justify;
+    margin: 2%;
+}
 .alinha input{
     width: 100%;
 }
