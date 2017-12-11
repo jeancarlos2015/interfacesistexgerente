@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
-<html lang="en" ng-app="appProduto" ng-controller="controllerProdutos">
+<html lang="en" ng-app="appCliente" ng-controller="controllerClientes">
     <head>
         <meta charset="utf-8">
         <title>SISTEX</title>
@@ -50,7 +50,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
-        <script src="resources/js/controllerProdutos.js"></script>
+        <script src="resources/js/controllerClientes.js"></script>
     </head>
 
     <body>
@@ -99,31 +99,52 @@
                         </div>
                         <section id="main-content" class="column column-offset-20">
                             <h1 class="mt-2">Controle de Clientes   </h1><a class="anchor" name="widgets"></a>
+
                             <div class="row grid-responsive mt-1">
                                 <div class="column">
                                     <div class="card">
                                         <div class="card-block">
-                                            <form class="navbar-form" ng-click="listarProdutosNome()">
+                                            <form class="navbar-form" ng-click="buscarCliente()">
                                                 <div class="form-group" style="display:inline;">
                                                     <div class="input-group" style="display:table;">
                                                         <span class="input-group-addon" style="width:1%;"><span class="glyphicon glyphicon-search"></span></span>
-                                                        <input class="form-control" name="nome" placeholder="Coloque aqui o cpf do cliente" autocomplete="off" autofocus="autofocus" type="text" ng-model="nome">
+                                                        <input class="form-control" name="nome" placeholder="Coloque aqui o cpf do cliente" autocomplete="off" autofocus="autofocus" type="text" ng-model="cpf">
                                                         <input class="hidden" type="submit" />
                                                     </div>
                                                 </div>
                                             </form>
-                                            <div class="mt-1">
-                                                <div class="float-left ml-1">
-                                                    <h4>Nome do cliente: Joao </h4>
-                                                    <h4>Data de nascimento: 10-10-1991</h4>
-                                                    <h4>CPF: 909090 </h4>
-                                                    <input type="button" value="Alterar">
-                                                    <input type="button" value="Excluir">
+
+
+                                            <div ng-repeat="cliente in clientes">
+                                                <div class="mt-1">
+                                                    <div class="float-left ml-1">
+                                                        <h4>Nome do cliente: {{cliente.nome}} </h4>
+                                                        <h4>Data de nascimento: {{cliente.datanascimento}}</h4>
+                                                        <h4>ID: {{cliente.idcliente}}</h4>
+                                                        <label class="alinha">Nome  <input type="text" class="form-control "  placeholder="Seu Nome" ng-model="cliente.nome" required/></label>
+                                                        <label class="alinha">Telefone  <input type="text" class="form-control "  placeholder="Seu Nome" ng-model="cliente.telefone" required/></label>
+                                                        <label class="alinha">Email  <input type="text" class="form-control "  placeholder="Seu Nome" ng-model="cliente.email" required/></label>
+                                                        <label class="alinha">Endereço  <input type="text" class="form-control "  placeholder="Seu Nome" ng-model="cliente.endereco" required/></label>
+                                                        <label class="alinha">Data de nascimento  <input type="text" class="form-control "  placeholder="Seu Nome" ng-model="cliente.datanascimento" required/></label>
+                                                        <label class="alinha">CPF  <input type="text" class="form-control "  placeholder="Seu Nome" ng-model="cliente.cpf" required/></label>
+                                                        <form action="controleClientes.jsp">
+                                                            <input type="button" value="Alterar" ng-click="alterarCliente(cliente)">
+                                                            <input type="submit" value="Excluir" ng-click="excluirCliente(cliente)">
+                                                            <input type="submit" value="Cadastrar" ng-click="salvarCliente(cliente)">
+
+                                                        </form>
+
+                                                        <br>
+                                                        <br>
+                                                        {{mensagemCliente}}
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <hr class="m-0 mb-2" />
                                                 </div>
-                                                <div class="clearfix"></div>
-                                                <hr class="m-0 mb-2" />
+
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
 

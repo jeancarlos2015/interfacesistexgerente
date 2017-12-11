@@ -37,6 +37,15 @@ angular.module('appProduto', [])
                         });
             };
             
+            $scope.pedidos = [];
+            $scope.pedido = {};
+            $scope.listarPedidosAtuais = function () {
+                $http.get('https://servicocontrolepedidos.herokuapp.com/pedido/listaratuais/Novo').
+                        then(function (response) {
+                            $scope.pedidos = response.data;
+                        });
+            };
+            
             $scope.funcionario={};
             $scope.produto = {};
             $scope.produto.idfornecedor = 0;
@@ -48,6 +57,34 @@ angular.module('appProduto', [])
                             if(response.data){
                                 $scope.mensagemProduto = "Produto Cadastrado com sucesso!!!";
                             }
+                        });
+            };
+            
+             $scope.cancelarPedido = function (pedido) {
+                $http.delete('https://servicocontrolepedidos.herokuapp.com/pedido/' + pedido.idpedido).
+                        then(function (response) {
+                            indice = $scope.pedidos.indexOf(pedido);
+                            $scope.pedidos.splice(indice, 1);
+                        });
+            };
+
+            $scope.atribuirPedido = function (pedido, funcionario) {
+                pedido.status = "Pendente";
+                pedido.idfuncionario = funcionario.idfuncionario;
+                $http.put('https://servicocontrolepedidos.herokuapp.com/pedido', pedido).
+                        then(function (response) {
+                            indice = $scope.pedidos.indexOf(pedido);
+                            $scope.pedidos.splice(indice, 1);
+                        });
+            };
+            $scope.pedidos=[];
+            $scope.confirmarPedido = function (pedido, funcionario) {
+                pedido.status = "Entregue";
+                pedido.idfuncionario = funcionario.idfuncionario;
+                $http.put('https://servicocontrolepedidos.herokuapp.com/pedido', pedido).
+                        then(function (response) {
+                            indice = $scope.pedidos.indexOf(pedido);
+                            $scope.pedidos.splice(indice, 1);
                         });
             };
 

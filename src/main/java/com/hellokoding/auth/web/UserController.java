@@ -54,7 +54,6 @@ public class UserController {
             model.addAttribute("message", "");
             return "conta";   
         }
-
         return "login";
     }
 

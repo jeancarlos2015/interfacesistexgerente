@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
-<html lang="en" ng-app="appProduto" ng-controller="controllerProdutos">
+<html lang="en" ng-app="appPedidos" ng-controller="controllerPedidos">
     <head>
         <meta charset="utf-8">
         <title>SISTEX</title>
@@ -50,7 +50,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
-        <script src="resources/js/controllerProdutos.js"></script>
+        <script src="resources/js/controllerPedidos.js"></script>
     </head>
 
     <body>
@@ -103,11 +103,11 @@
                                 <div class="column">
                                     <div class="card">
                                         <div class="card-title">
-                                            <form class="navbar-form" ng-click="listarProdutosNome()">
+                                            <form class="navbar-form" ng-click="listarPedidosPorCpf()">
                                                 <div class="form-group" style="display:inline;">
                                                     <div class="input-group" style="display:table;">
                                                         <span class="input-group-addon" style="width:1%;"><span class="glyphicon glyphicon-search"></span></span>
-                                                        <input class="form-control" name="nome" placeholder="Coloque aqui o cpf do cliente" autocomplete="off" autofocus="autofocus" type="text" ng-model="nome">
+                                                        <input class="form-control" name="nome" placeholder="Coloque aqui o cpf do cliente" autocomplete="off" autofocus="autofocus" type="text" ng-model="cpf">
                                                         <input class="hidden" type="submit" />
                                                     </div>
                                                 </div>
@@ -115,55 +115,27 @@
                                         </div>
 
                                         <div class="card-block">
-                                            <div class="mt-1">
-                                                <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
+                                            <div class="mt-1" ng-repeat="ped in pedidos">
+                                                <div ng-init="buscarProduto(ped)">
+                                                    <img src="resources/{{produto.imageStr}}" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
+                                                </div>
+                                                
                                                 <div class="float-left ml-1">
                                                     <h4>Solicitante: Joao </h4>
-                                                    <h4>Status: Pendente </h4>
-                                                    <h4>Preço: 30,00 </h4>
-                                                    <h4>ID Do Produto: 1 </h4>
-                                                    <h4>Produto: Marmitex </h4>
+                                                    <h4>Status:{{ped.status}} </h4>
+                                                    <h4>Preço: {{ped.precototal}},00 </h4>
+                                                    <h4>ID Do Produto: {{ped.idproduto}} </h4>
+                                                    <p>{{ped.descricao}} </p>
 
-                                                    <input type="button" value="Atribuir">
-                                                    <input type="button" value="Cancelar">
-                                                    <input type="button" value="Confirmar Entrega">
+                                                    <input type="button" value="Atribuir" ng-click="atribuirPedido(ped,funcionario)">
+                                                    <input type="button" value="Cancelar" ng-click="cancelarPedido(ped)">
+                                                    <input type="button" value="Confirmar Entrega" ng-click="confirmarPedido(ped,funcionario)">
                                                 </div>
                                                 <div class="clearfix"></div>
                                                 <hr class="m-0 mb-2" />
                                             </div>
 
-                                            <div class="mt-1">
-                                                <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
-                                                <div class="float-left ml-1">
-                                                    <h4>Solicitante: Joao </h4>
-                                                    <h4>Status: Pendente </h4>
-                                                    <h4>Preço: 30,00 </h4>
-                                                    <h4>ID Do Produto: 1 </h4>
-                                                    <h4>Produto: Marmitex </h4>
-
-                                                    <input type="button" value="Atribuir">
-                                                    <input type="button" value="Cancelar">
-                                                    <input type="button" value="Confirmar Entrega">
-                                                </div>
-                                                <div class="clearfix"></div>
-                                                <hr class="m-0 mb-2" />
-                                            </div>
-                                            <div class="mt-1">
-                                                <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
-                                                <div class="float-left ml-1">
-                                                    <h4>Solicitante: Joao </h4>
-                                                    <h4>Status: Pendente </h4>
-                                                    <h4>Preço: 30,00 </h4>
-                                                    <h4>ID Do Produto: 1 </h4>
-                                                    <h4>Produto: Marmitex </h4>
-
-                                                    <input type="button" value="Atribuir">
-                                                    <input type="button" value="Cancelar">
-                                                    <input type="button" value="Confirmar Entrega">
-                                                </div>
-                                                <div class="clearfix"></div>
-                                                <hr class="m-0 mb-2" />
-                                            </div>
+                                            {{mensagemPedido}}
 
                                         </div>
                                     </div>

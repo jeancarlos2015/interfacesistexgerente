@@ -63,7 +63,7 @@
 
             <input type="text" class="hidden" ng-init=" rg = ${pageContext.request.userPrincipal.name}"  ng-model="rg" />
             <input type="button" class="hidden" value="atualizar" ng-init="buscarFuncionario()"/>
-            <!--            <input type="button" class="hidden" value="atualizar" ng-init="Pedidos()"/>-->
+            <input type="button" class="hidden" value="atualizar" ng-init="listarPedidosAtuais()"/>
 
             <form>
                 <input type="button" value="Logout" onclick="document.forms['logoutForm'].submit()" />
@@ -78,93 +78,130 @@
         <div class="row">
             <div id="sidebar" class="column">
                 <h4>Dados do funcionário<h4>
-                <div>
-                    <h5>Nome:{{funcionario.nome}}</h5>
-                    <h5>RG:{{funcionario.rg}}</h5>
-                    <h5>Email:{{funcionario.email}}</h5>
-                    <h5>Telefone:{{funcionario.telefone}}</h5> 
-                    <h5>Cargo:{{funcionario.cargo}}</h5> 
-                </div>
-                <h4>Navegação</h4>
-                
-                <ul>
-                    <li><a href="conta.jsp"><em class="fa fa-home"></em> Inicio</a></li>
-                    <li><a href="controlePedidos.jsp"><em class="fa fa-forward"></em>Pedidos</a></li>
-                    <li><a href="controleClientes.jsp"><em class="fa fa-forward"></em>Clientes</a></li>
-                    <li><a href="controleProdutos.jsp"><em class="fa fa-forward"></em>Produtos</a></li>
-                </ul>
-                <br>
-                <br>
-                <br>
-            </div>
-            <section id="main-content" class="column column-offset-20">
-                <div class="row grid-responsive mt-1">
-                    <div class="column">
-                        <div class="card">
-                            <div class="card-title">
-                                <h1 class="float-left">Pedidos Do Dia</h1>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="card-block">
-                                <div class="mt-1">
-                                    <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
-                                    <div class="float-left ml-1">
-                                        <h4>Solicitante: Joao </h4>
-                                        <h4>Status: Novo </h4>
-                                        <h4>Preço: 30,00 </h4>
-                                        <h4>ID Do Produto: 1 </h4>
-                                        <h4>Produto: Marmitex </h4>
-                                        <h5>Endereço:</h5>
-                                        <p>Bairro Joana dark rua 777</p>
-                                        <input type="button" value="Atribuir">
-                                        <input type="button" value="Cancelar">
-                                        <input type="button" value="Confirmar Entrega">
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <hr class="m-0 mb-2" />
-                                </div>
-
-                                <div class="mt-1">
-                                    <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
-                                    <div class="float-left ml-1">
-                                        <h4>Solicitante: Joao </h4>
-                                        <h4>Status: Novo </h4>
-                                        <h4>Preço: 30,00 </h4>
-                                        <h4>ID Do Produto: 1 </h4>
-                                        <h4>Produto: Marmitex </h4>
-
-                                        <input type="button" value="Atribuir">
-                                        <input type="button" value="Cancelar">
-                                        <input type="button" value="Confirmar Entrega">
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <hr class="m-0 mb-2" />
-                                </div>
-                                <div class="mt-1">
-                                    <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
-                                    <div class="float-left ml-1">
-                                        <h4>Solicitante: Joao </h4>
-                                        <h4>Status: Novo </h4>
-                                        <h4>Preço: 30,00 </h4>
-                                        <h4>ID Do Produto: 1 </h4>
-                                        <h4>Produto: Marmitex </h4>
-
-                                        <input type="button" value="Atribuir">
-                                        <input type="button" value="Cancelar">
-                                        <input type="button" value="Confirmar Entrega">
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <hr class="m-0 mb-2" />
-                                </div>
-
-                            </div>
+                        <div>
+                            <h5>Nome:{{funcionario.nome}}</h5>
+                            <h5>RG:{{funcionario.rg}}</h5>
+                            <h5>Email:{{funcionario.email}}</h5>
+                            <h5>Telefone:{{funcionario.telefone}}</h5> 
+                            <h5>Cargo:{{funcionario.cargo}}</h5> 
                         </div>
-                    </div>
+                        <h4>Navegação</h4>
 
-                </div>
+                        <ul>
+                            <li><a href="conta.jsp"><em class="fa fa-home"></em> Inicio</a></li>
+                            <li><a href="controlePedidos.jsp"><em class="fa fa-forward"></em>Pedidos</a></li>
+                            <li><a href="controleClientes.jsp"><em class="fa fa-forward"></em>Clientes</a></li>
+                            <li><a href="controleProdutos.jsp"><em class="fa fa-forward"></em>Produtos</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        </div>
+                        <section id="main-content" class="column column-offset-20">
+                            <!--                <div class="row grid-responsive mt-1">
+                                                <div class="column">
+                                                    <div class="card">
+                                                        <div class="card-title">
+                                                            <h1 class="float-left">Pedidos Do Dia</h1>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="card-block">
+                                                            <div class="mt-1">
+                                                                <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
+                                                                <div class="float-left ml-1">
+                                                                    <h4>Solicitante: Joao </h4>
+                                                                    <h4>Status: Novo </h4>
+                                                                    <h4>Preço: 30,00 </h4>
+                                                                    <h4>ID Do Produto: 1 </h4>
+                                                                    <h4>Produto: Marmitex </h4>
+                                                                    <h5>Endereço:</h5>
+                                                                    <p>Bairro Joana dark rua 777</p>
+                                                                    <input type="button" value="Atribuir">
+                                                                    <input type="button" value="Cancelar">
+                                                                    <input type="button" value="Confirmar Entrega">
+                                                                </div>
+                                                                <div class="clearfix"></div>
+                                                                <hr class="m-0 mb-2" />
+                                                            </div>
+                            
+                                                            <div class="mt-1">
+                                                                <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
+                                                                <div class="float-left ml-1">
+                                                                    <h4>Solicitante: Joao </h4>
+                                                                    <h4>Status: Novo </h4>
+                                                                    <h4>Preço: 30,00 </h4>
+                                                                    <h4>ID Do Produto: 1 </h4>
+                                                                    <h4>Produto: Marmitex </h4>
+                            
+                                                                    <input type="button" value="Atribuir">
+                                                                    <input type="button" value="Cancelar">
+                                                                    <input type="button" value="Confirmar Entrega">
+                                                                </div>
+                                                                <div class="clearfix"></div>
+                                                                <hr class="m-0 mb-2" />
+                                                            </div>
+                                                            <div class="mt-1">
+                                                                <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
+                                                                <div class="float-left ml-1">
+                                                                    <h4>Solicitante: Joao </h4>
+                                                                    <h4>Status: Novo </h4>
+                                                                    <h4>Preço: 30,00 </h4>
+                                                                    <h4>ID Do Produto: 1 </h4>
+                                                                    <h4>Produto: Marmitex </h4>
+                            
+                                                                    <input type="button" value="Atribuir">
+                                                                    <input type="button" value="Cancelar">
+                                                                    <input type="button" value="Confirmar Entrega">
+                                                                </div>
+                                                                <div class="clearfix"></div>
+                                                                <hr class="m-0 mb-2" />
+                                                            </div>
+                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                            
+                                            </div>-->
+                            <div class="row grid-responsive mt-2">
+                                <div class="column">
+                                    <div class="card">
+                                        <div class="card-title">
+                                            <h3 class="mt-2 wow fadeInUp" data-wow-delay="0.3s"> Pedidos Do Dia</h3>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <ul class="slides">
 
-            </section>
-        </div>
+                                            <li class="slide alinha3">
+                                                <div ng-repeat="ped in pedidos">
+                                                    <div class="card-block">
+                                                        <div class="mt-1">                                                
+                                                            <div class="float-left ml-1">
+                                                                <h4>ID DO PEDIDO: {{ped.idpedido}}</h4>
+                                                                <h4 class="m-0">DESCRIÇÃO :<span class="text-muted">{{ped.descricao}}</span></h4>
+                                                                <h4 class="text-small text-muted">Preço: {{ped.precototal}},00</h4>
+                                                                <h4 class="text-small text-muted">STATUS: {{ped.status}}</h4>
+                                                            </div>
+                                                            <div class="clearfix">
+                                                                <hr class="m-0 mb-2" />
+                                                                <form>
+                                                                    <input type="button" value="Cancelar" ng-click="cancelarPedido(ped)"/>
+                                                                    <input type="button" value="Atribuir" ng-click="atribuirPedido(ped)">
+                                                                    <input type="button" value="Confirmar Entrega" ng-click="confirmarEntrega(ped)">
+                                                                </form>
+                                                            </div>
 
-    </body>
-</html> 
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                        </div>
+
+                        </body>
+                        </html> 
