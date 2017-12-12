@@ -3,13 +3,16 @@ angular.module('appCliente', [])
             $scope.cliente = {};
 
             $scope.salvarCliente = function (cliente) {
+                $scope.mensagemCliente = "Enviando...";
                 $http.post('https://servicocontrolepedidos.herokuapp.com/cliente', cliente).
-                        then(function (response) {
+                        success(function (response) {
                             if (response.data) {
                                 $scope.mensagemCliente = "Cliente cadastrado com sucesso!!!";
                             }
 
-                        });
+                        }).error(function (e) {
+                    $scope.mensagemCliente = "Nenhuma operação foi feita!!!";
+                });
             };
             $scope.cpf = "";
             $scope.clientes = [];
@@ -23,26 +26,30 @@ angular.module('appCliente', [])
 
             $scope.alterarCliente = function (cliente) {
                 $http.put('https://servicocontrolepedidos.herokuapp.com/cliente', cliente).
-                        then(function (response) {
+                        success(function (response) {
                             if (response.data) {
                                 $scope.mensagemCliente = "Cliente Alterado com sucesso!!!";
                             }
 
-                        });
+                        }).error(function (response) {
+                    $scope.mensagemCliente = "Nenhuma operação foi feita!!!";
+                });
             };
 
             $scope.cpf = "";
             $scope.excluirCliente = function (cliente) {
                 $http.delete('https://servicocontrolepedidos.herokuapp.com/cliente/' + cliente.idcliente).
-                        then(function (response) {
+                        success(function (response) {
                             $scope.cliente = response.data;
                             if (response.data) {
-                                
-                                $scope.clientes[0]={};
+
+                                $scope.clientes[0] = {};
                                 $scope.mensagemCliente = "Conta excluida com sucesso!!!";
                             }
 
-                        });
+                        }).error(function (response) {
+                    $scope.mensagemCliente = "Nenhuma operação foi feita!!!";
+                });
             };
 
             $scope.rg = "";

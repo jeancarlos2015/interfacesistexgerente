@@ -37,12 +37,27 @@ angular.module('appProduto', [])
                         });
             };
             
-            $scope.pedidos = [];
+            $scope.pedidosNovos = [];
             $scope.pedido = {};
-            $scope.listarPedidosAtuais = function () {
+            $scope.listarPedidosAtuaisNovos = function () {
                 $http.get('https://servicocontrolepedidos.herokuapp.com/pedido/listaratuais/Novo').
                         then(function (response) {
-                            $scope.pedidos = response.data;
+                            $scope.pedidosNovos = response.data;
+                        });
+            };
+            $scope.pedidosPendentes = [];
+            $scope.pedido = {};
+            $scope.listarPedidosAtuaisPendentes = function () {
+                $http.get('https://servicocontrolepedidos.herokuapp.com/pedido/listaratuais/Pendente').
+                        then(function (response) {
+                            $scope.pedidosPendentes = response.data;
+                        });
+            };
+            
+            $scope.listarPedidosAtuaisEntregues = function () {
+                $http.get('https://servicocontrolepedidos.herokuapp.com/pedido/listaratuais/Entregue').
+                        then(function (response) {
+                            $scope.pedidosEntregues = response.data;
                         });
             };
             

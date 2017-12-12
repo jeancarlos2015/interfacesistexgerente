@@ -63,8 +63,9 @@
 
             <input type="text" class="hidden" ng-init=" rg = ${pageContext.request.userPrincipal.name}"  ng-model="rg" />
             <input type="button" class="hidden" value="atualizar" ng-init="buscarFuncionario()"/>
-            <input type="button" class="hidden" value="atualizar" ng-init="listarPedidosAtuais()"/>
-
+            <input type="button" class="hidden" value="atualizar" ng-init="listarPedidosAtuaisNovos()"/>
+            <input type="button" class="hidden" value="atualizar" ng-init="listarPedidosAtuaisEntregues()"/>
+            <input type="button" class="hidden" value="atualizar" ng-init="listarPedidosAtuaisPendentes()"/>
             <form>
                 <input type="button" value="Logout" onclick="document.forms['logoutForm'].submit()" />
 
@@ -98,70 +99,7 @@
                         <br>
                         </div>
                         <section id="main-content" class="column column-offset-20">
-                            <!--                <div class="row grid-responsive mt-1">
-                                                <div class="column">
-                                                    <div class="card">
-                                                        <div class="card-title">
-                                                            <h1 class="float-left">Pedidos Do Dia</h1>
-                                                            <div class="clearfix"></div>
-                                                        </div>
-                                                        <div class="card-block">
-                                                            <div class="mt-1">
-                                                                <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
-                                                                <div class="float-left ml-1">
-                                                                    <h4>Solicitante: Joao </h4>
-                                                                    <h4>Status: Novo </h4>
-                                                                    <h4>Preço: 30,00 </h4>
-                                                                    <h4>ID Do Produto: 1 </h4>
-                                                                    <h4>Produto: Marmitex </h4>
-                                                                    <h5>Endereço:</h5>
-                                                                    <p>Bairro Joana dark rua 777</p>
-                                                                    <input type="button" value="Atribuir">
-                                                                    <input type="button" value="Cancelar">
-                                                                    <input type="button" value="Confirmar Entrega">
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                                <hr class="m-0 mb-2" />
-                                                            </div>
-                            
-                                                            <div class="mt-1">
-                                                                <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
-                                                                <div class="float-left ml-1">
-                                                                    <h4>Solicitante: Joao </h4>
-                                                                    <h4>Status: Novo </h4>
-                                                                    <h4>Preço: 30,00 </h4>
-                                                                    <h4>ID Do Produto: 1 </h4>
-                                                                    <h4>Produto: Marmitex </h4>
-                            
-                                                                    <input type="button" value="Atribuir">
-                                                                    <input type="button" value="Cancelar">
-                                                                    <input type="button" value="Confirmar Entrega">
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                                <hr class="m-0 mb-2" />
-                                                            </div>
-                                                            <div class="mt-1">
-                                                                <img src="resources/images/feijaotropeiro.png" alt="profile photo" class="circle float-left profile-photo" width="150" height="auto">
-                                                                <div class="float-left ml-1">
-                                                                    <h4>Solicitante: Joao </h4>
-                                                                    <h4>Status: Novo </h4>
-                                                                    <h4>Preço: 30,00 </h4>
-                                                                    <h4>ID Do Produto: 1 </h4>
-                                                                    <h4>Produto: Marmitex </h4>
-                            
-                                                                    <input type="button" value="Atribuir">
-                                                                    <input type="button" value="Cancelar">
-                                                                    <input type="button" value="Confirmar Entrega">
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                                <hr class="m-0 mb-2" />
-                                                            </div>
-                            
-                                                        </div>
-                                                    </div>
-                                                </div>
-                            
-                                            </div>-->
+
                             <div class="row grid-responsive mt-2">
                                 <div class="column">
                                     <div class="card">
@@ -172,7 +110,7 @@
                                         <ul class="slides">
 
                                             <li class="slide alinha3">
-                                                <div ng-repeat="ped in pedidos">
+                                                <div ng-repeat="ped in pedidosNovos">
                                                     <div class="card-block">
                                                         <div class="mt-1">                                                
                                                             <div class="float-left ml-1">
@@ -185,8 +123,8 @@
                                                                 <hr class="m-0 mb-2" />
                                                                 <form>
                                                                     <input type="button" value="Cancelar" ng-click="cancelarPedido(ped)"/>
-                                                                    <input type="button" value="Atribuir" ng-click="atribuirPedido(ped,funcionario)">
-                                                                    <input type="button" value="Confirmar Entrega" ng-click="confirmarEntrega(ped,funcionario)">
+                                                                    <input type="button" value="Atribuir" ng-click="atribuirPedido(ped, funcionario)">
+                                                                    <input type="button" value="Confirmar Entrega" ng-click="confirmarEntrega(ped, funcionario)">
                                                                 </form>
                                                             </div>
 
@@ -197,6 +135,68 @@
                                         </ul>
 
                                     </div>
+                                    
+                                    
+                                    
+                                        <div class="card">
+                                        <div class="card-title">
+                                            <h3 class="mt-2 wow fadeInUp" data-wow-delay="0.3s"> Pedidos Pendentes No Dia</h3>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <ul class="slides">
+
+                                            <li class="slide alinha3">
+                                                <div ng-repeat="ped in pedidosPedentes">
+                                                    <div class="card-block">
+                                                        <div class="mt-1">                                                
+                                                            <div class="float-left ml-1">
+                                                                <h4>ID DO PEDIDO: {{ped.idpedido}}</h4>
+                                                                <h4 class="m-0">DESCRIÇÃO :<span class="text-muted">{{ped.descricao}}</span></h4>
+                                                                <h4 class="text-small text-muted">Preço: {{ped.precototal}},00</h4>
+                                                                <h4 class="text-small text-muted">STATUS: {{ped.status}}</h4>
+                                                            </div>
+                                                            <div class="clearfix">
+                                                                <hr class="m-0 mb-2" />
+                                                                <form>
+                                                                    <input type="button" value="Cancelar" ng-click="cancelarPedido(ped)"/>
+                                                                    <input type="button" value="Confirmar Entrega" ng-click="confirmarEntrega(ped, funcionario)">
+                                                                </form>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </ul>
+
+                                    </div>
+                                    
+                                    
+                                        <div class="card">
+                                        <div class="card-title">
+                                            <h3 class="mt-2 wow fadeInUp" data-wow-delay="0.3s"> Pedidos Entregues No dia</h3>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <ul class="slides">
+
+                                            <li class="slide alinha3">
+                                                <div ng-repeat="ped in pedidosEntregues">
+                                                    <div class="card-block">
+                                                        <div class="mt-1">                                                
+                                                            <div class="float-left ml-1">
+                                                                <h4>ID DO PEDIDO: {{ped.idpedido}}</h4>
+                                                                <h4 class="m-0">DESCRIÇÃO :<span class="text-muted">{{ped.descricao}}</span></h4>
+                                                                <h4 class="text-small text-muted">Preço: {{ped.precototal}},00</h4>
+                                                                <h4 class="text-small text-muted">STATUS: {{ped.status}}</h4>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </ul>
+
+                                    </div>
+                                    
                                 </div>
 
                             </div>
