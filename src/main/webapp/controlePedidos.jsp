@@ -92,6 +92,7 @@
                             <li><a href="conta.jsp"><em class="fa fa-home"></em> Inicio</a></li>
                             <li><a href="controlePedidos.jsp"><em class="fa fa-forward"></em>Pedidos</a></li>
                             <li><a href="controleClientes.jsp"><em class="fa fa-forward"></em>Clientes</a></li>
+                            <li><a href="controleProdutos.jsp"><em class="fa fa-forward"></em>Produtos</a></li>
                         </ul>
                         <br>
                         <br>
