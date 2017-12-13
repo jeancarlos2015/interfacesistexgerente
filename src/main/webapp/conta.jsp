@@ -182,12 +182,15 @@
                                             <li class="slide alinha3">
                                                 <div ng-repeat="pedidoEntregue in pedidosEntregues">
                                                     <div class="card-block">
+                                                        <br>
+                                                        <br>
                                                         <div class="mt-1">                                                
                                                             <div class="float-left ml-1">
                                                                 <h4>ID DO PEDIDO: {{pedidoEntregue.idpedido}}</h4>
                                                                 <h4 class="m-0">DESCRIÇÃO :<span class="text-muted">{{pedidoEntregue.descricao}}</span></h4>
                                                                 <h4 class="text-small text-muted">Preço: {{pedidoEntregue.precototal}},00</h4>
                                                                 <h4 class="text-small text-muted">STATUS: {{pedidoEntregue.status}}</h4>
+                                                                <h4 class="text-small text-muted">STATUS: {{pedidoEntregue.datapedido}}</h4>
                                                             </div>
 
                                                         </div>
