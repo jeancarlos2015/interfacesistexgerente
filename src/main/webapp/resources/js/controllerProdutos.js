@@ -53,7 +53,7 @@ angular.module('appProduto', [])
                             $scope.pedidosPendentes = response.data;
                         });
             };
-            
+            $scope.pedidosEntregues = [];
             $scope.listarPedidosAtuaisEntregues = function () {
                 $http.get('https://servicocontrolepedidos.herokuapp.com/pedido/listaratuais/Entregue').
                         then(function (response) {

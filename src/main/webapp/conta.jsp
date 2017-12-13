@@ -104,27 +104,27 @@
                                 <div class="column">
                                     <div class="card">
                                         <div class="card-title">
-                                            <h3 class="mt-2 wow fadeInUp" data-wow-delay="0.3s"> Pedidos Do Dia</h3>
+                                            <h1 class="mt-2 wow fadeInUp" data-wow-delay="0.3s"> Novos Pedidos Do Dia</h1>
                                             <div class="clearfix"></div>
                                         </div>
                                         <ul class="slides">
 
                                             <li class="slide alinha3">
-                                                <div ng-repeat="ped in pedidosNovos">
+                                                <div ng-repeat="pedidoNovo in pedidosNovos">
                                                     <div class="card-block">
                                                         <div class="mt-1">                                                
                                                             <div class="float-left ml-1">
-                                                                <h4>ID DO PEDIDO: {{ped.idpedido}}</h4>
-                                                                <h4 class="m-0">DESCRIÇÃO :<span class="text-muted">{{ped.descricao}}</span></h4>
-                                                                <h4 class="text-small text-muted">Preço: {{ped.precototal}},00</h4>
-                                                                <h4 class="text-small text-muted">STATUS: {{ped.status}}</h4>
+                                                                <h4>ID DO PEDIDO: {{pedidoNovo.idpedido}}</h4>
+                                                                <h4 class="m-0">DESCRIÇÃO :<span class="text-muted">{{pedidoNovo.descricao}}</span></h4>
+                                                                <h4 class="text-small text-muted">Preço: {{pedidoNovo.precototal}},00</h4>
+                                                                <h4 class="text-small text-muted">STATUS: {{pedidoNovo.status}}</h4>
                                                             </div>
                                                             <div class="clearfix">
                                                                 <hr class="m-0 mb-2" />
                                                                 <form>
-                                                                    <input type="button" value="Cancelar" ng-click="cancelarPedido(ped)"/>
-                                                                    <input type="button" value="Atribuir" ng-click="atribuirPedido(ped, funcionario)">
-                                                                    <input type="button" value="Confirmar Entrega" ng-click="confirmarEntrega(ped, funcionario)">
+                                                                    <input type="button" value="Cancelar" ng-click="cancelarPedido(pedidoNovo)"/>
+                                                                    <input type="button" value="Atribuir" ng-click="atribuirPedido(pedidoNovo, funcionario)">
+                                                                    <input type="button" value="Confirmar Entrega" ng-click="confirmarEntrega(pedidoNovo, funcionario)">
                                                                 </form>
                                                             </div>
 
@@ -140,26 +140,26 @@
                                     
                                         <div class="card">
                                         <div class="card-title">
-                                            <h3 class="mt-2 wow fadeInUp" data-wow-delay="0.3s"> Pedidos Pendentes No Dia</h3>
+                                            <h1 class="mt-2 wow fadeInUp" data-wow-delay="0.3s"> Pedidos Pendentes No Dia</h1>
                                             <div class="clearfix"></div>
                                         </div>
                                         <ul class="slides">
 
                                             <li class="slide alinha3">
-                                                <div ng-repeat="ped in pedidosPedentes">
+                                                <div ng-repeat="pedidoPendente in pedidosPendentes">
                                                     <div class="card-block">
                                                         <div class="mt-1">                                                
                                                             <div class="float-left ml-1">
-                                                                <h4>ID DO PEDIDO: {{ped.idpedido}}</h4>
-                                                                <h4 class="m-0">DESCRIÇÃO :<span class="text-muted">{{ped.descricao}}</span></h4>
-                                                                <h4 class="text-small text-muted">Preço: {{ped.precototal}},00</h4>
-                                                                <h4 class="text-small text-muted">STATUS: {{ped.status}}</h4>
+                                                                <h4>ID DO PEDIDO: {{pedidoPendente.idpedido}}</h4>
+                                                                <h4 class="m-0">DESCRIÇÃO :<span class="text-muted">{{pedidoPendente.descricao}}</span></h4>
+                                                                <h4 class="text-small text-muted">Preço: {{pedidoPendente.precototal}},00</h4>
+                                                                <h4 class="text-small text-muted">STATUS: {{pedidoPendente.status}}</h4>
                                                             </div>
                                                             <div class="clearfix">
                                                                 <hr class="m-0 mb-2" />
                                                                 <form>
-                                                                    <input type="button" value="Cancelar" ng-click="cancelarPedido(ped)"/>
-                                                                    <input type="button" value="Confirmar Entrega" ng-click="confirmarEntrega(ped, funcionario)">
+                                                                    <input type="button" value="Cancelar" ng-click="cancelarPedido(pedidoPendente)"/>
+                                                                    <input type="button" value="Confirmar Entrega" ng-click="confirmarPedido(pedidoPendente, funcionario)">
                                                                 </form>
                                                             </div>
 
@@ -174,20 +174,20 @@
                                     
                                         <div class="card">
                                         <div class="card-title">
-                                            <h3 class="mt-2 wow fadeInUp" data-wow-delay="0.3s"> Pedidos Entregues No dia</h3>
+                                            <h1 class="mt-2 wow fadeInUp" data-wow-delay="0.3s"> Pedidos Entregues No dia</h1>
                                             <div class="clearfix"></div>
                                         </div>
                                         <ul class="slides">
 
                                             <li class="slide alinha3">
-                                                <div ng-repeat="ped in pedidosEntregues">
+                                                <div ng-repeat="pedidoEntregue in pedidosEntregues">
                                                     <div class="card-block">
                                                         <div class="mt-1">                                                
                                                             <div class="float-left ml-1">
-                                                                <h4>ID DO PEDIDO: {{ped.idpedido}}</h4>
-                                                                <h4 class="m-0">DESCRIÇÃO :<span class="text-muted">{{ped.descricao}}</span></h4>
-                                                                <h4 class="text-small text-muted">Preço: {{ped.precototal}},00</h4>
-                                                                <h4 class="text-small text-muted">STATUS: {{ped.status}}</h4>
+                                                                <h4>ID DO PEDIDO: {{pedidoEntregue.idpedido}}</h4>
+                                                                <h4 class="m-0">DESCRIÇÃO :<span class="text-muted">{{pedidoEntregue.descricao}}</span></h4>
+                                                                <h4 class="text-small text-muted">Preço: {{pedidoEntregue.precototal}},00</h4>
+                                                                <h4 class="text-small text-muted">STATUS: {{pedidoEntregue.status}}</h4>
                                                             </div>
 
                                                         </div>
