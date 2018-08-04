@@ -188,9 +188,9 @@
                                                             <div class="float-left ml-1">
                                                                 <h4>ID DO PEDIDO: {{pedidoEntregue.idpedido}}</h4>
                                                                 <h4 class="m-0">DESCRIÇÃO :<span class="text-muted">{{pedidoEntregue.descricao}}</span></h4>
-                                                                <h4 class="text-small text-muted">Preço: {{pedidoEntregue.precototal}},00</h4>
+                                                                <h4 class="text-small text-muted">PREÇO: {{pedidoEntregue.precototal}},00</h4>
                                                                 <h4 class="text-small text-muted">STATUS: {{pedidoEntregue.status}}</h4>
-                                                                <h4 class="text-small text-muted">STATUS: {{pedidoEntregue.datapedido}}</h4>
+                                                                <h4 class="text-small text-muted">DATA DO PEDIDO {{pedidoEntregue.datapedido}}</h4>
                                                             </div>
 
                                                         </div>
