@@ -16,5 +16,5 @@ script:
 deploy:
  provider: heroku
  api-key:
-  secure: $HEROKU_SONAR
+  secure: $APP_TOKEN
  app: interfacegerentefornecedor
