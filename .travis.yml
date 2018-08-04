@@ -11,8 +11,8 @@ addons:
     organization: "interfacegerente"
     token:
       secure: "$SONAR_KEY"
-script:
-  - sonar-scanner
+#script:
+#  - sonar-scanner
 deploy:
  provider: heroku
  api-key:
