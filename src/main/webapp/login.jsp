@@ -111,8 +111,8 @@
         </div> <!-- end of website-->
 
         <div class="fixedsocial">
-            <a href="https://www.facebook.com/Mido.HHH"><img src="resources/images/facebook.png" width="20" height="20" alt="fb"> </a>
-            <a href="https://www.behance.net/Mido_HHH"><img src="resources/images/behance.png" width="20" height="20" alt="behance"> </a>
+            <a href="https://www.facebook.com/jean412"><img src="resources/images/facebook.png" width="20" height="20" alt="fb"> </a>
+            <a href="https://www.facebook.com/jean412"><img src="resources/images/behance.png" width="20" height="20" alt="behance"> </a>
 
         </div>
 

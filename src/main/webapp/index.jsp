@@ -159,7 +159,7 @@
         <div class="copyrightswrapper">
             <div id="copyrights" class="container">
 
-                <p>Copyright 2014 <a href="https://www.facebook.com/Mido.HHH"> Jean Carlos Penas </a> All Rights Reserved</p>
+                <p>Copyright 2014 <a href="https://www.facebook.com/jean412"> Jean Carlos Penas </a> All Rights Reserved</p>
 
             </div> <!-- end of copyrights-->
         </div> <!-- end of website-->
