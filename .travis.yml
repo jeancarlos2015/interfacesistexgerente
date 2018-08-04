@@ -7,4 +7,4 @@ deploy:
  provider: heroku
  api-key:
   secure: $API_TOKEN
- app: servicointerfacegerente
+ app: interfacegerentefornecedor
