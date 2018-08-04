@@ -1,20 +1,10 @@
 language: java
 dist: trusty
-sudo: true
+sudo: false
 jdk:
   - oraclejdk8
-before_install:
-#- chmod +x mvnw
-
-addons:
-  sonarcloud:
-    organization: "interfacegerente"
-    token:
-      secure: "$SONAR_KEY"
-#script:
-#  - sonar-scanner
 deploy:
  provider: heroku
  api-key:
-  secure: $APP_TOKEN
+  secure: $API_TOKEN
  app: interfacegerentefornecedor
