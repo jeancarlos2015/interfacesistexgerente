@@ -64,7 +64,7 @@
                         <img src="resources/{{p.imageStr}}" width="150" height="150" alt="sliderimg" class="wow flipInX"
                              data-wow-delay=".8s"> 
                         <h4>{{p.nome}}</h4>
-                        <h4>Preço:{{p.preco}},00</h4>
+                      PREÇO:{{p.preco}},00</h4>
                         <p>{{p.descricao}}</p>
 
                     </div>
