@@ -48,7 +48,7 @@
                         <li><a href="produtos">PRODUTOS</a></li>
                         <li><a href="http://interfaceusuariospedidos.herokuapp.com">CLIENTE</a></li>
                         <c:if test="${pageContext.request.userPrincipal.name != null}">
-                            <li><a href="http://interfacegerentefornecedor.herokuapp.com/conta.jsp">Conta</a></li>
+                            <li><a href="http://interfacegerentefornecedor.herokuapp.com/conta.jsp">MINHA CONTA</a></li>
                         </c:if>
                     </ul>
                 </nav>
@@ -109,7 +109,7 @@
 
         <div class="footerwrapper">
             <footer class="container">
-                <div class="socialize">
+             <!--    <div class="socialize">
 
                     <h2>Redes Sociais</h2>
                     <div class="socialimgs">
@@ -122,7 +122,7 @@
                         <a href="#"><img src="resources/images/message.png" width="68" height="68" class="message" alt="message"></a>
                     </div> <!--end of social imgs-->
 
-                </div>
+                </div> -->
 
                 <!--
                                 <div class="sendfeedback">
@@ -167,14 +167,14 @@
 
 
 
-        <div class="fixedsocial">
+      <!--   <div class="fixedsocial">
             <a href="https://www.facebook.com/Mido.HHH"><img src="resources/images/facebook.png" width="20" height="20" alt="fb"> </a>
             <a href="https://www.behance.net/Mido_HHH"><img src="resources/images/behance.png" width="20" height="20" alt="behance"> </a>
 
 
 
 
-        </div>
+        </div> -->
 
 
 
